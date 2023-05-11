@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button Game</title>
+  <style>
+    #game-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <button id="game-button">Click me!</button>
+
+  <script>
+    var button = document.getElementById('game-button');
+
+    button.addEventListener('click', function() {
+      var windowWidth = window.innerWidth;
+      var windowHeight = window.innerHeight;
+      var buttonWidth = button.offsetWidth;
+      var buttonHeight = button.offsetHeight;
+
+      var newLeft = Math.random() * (windowWidth - buttonWidth);
+      var newTop = Math.random() * (windowHeight - buttonHeight);
+
+      button.style.left = newLeft + 'px';
+      button.style.top = newTop + 'px';
+    });
+  </script>
+</body>
+</html>
